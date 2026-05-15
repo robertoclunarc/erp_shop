@@ -25,4 +25,26 @@ export const reportService = {
     const response = await api.get('/reports/low-stock', { params });
     return response.data;
   },
+  getSalesByRange: async (params: { branch_id: number; start_date: string; end_date: string }) => {
+    const response = await api.get('/reports/sales-by-range', { params });
+    return response.data;
+  },
+  getInventoryStatus: async (params: { branch_id: number }) => {
+    const response = await api.get('/reports/inventory-status', { params });
+    return response.data;
+  },
+  getSalesByCashRegister: async (params: { branch_id: number }) => {
+    const response = await api.get('/reports/sales-by-cash-register', { params });
+    return response.data;
+  },
+  getSalesWithFilters: async (params: {
+    branch_id: number;
+    start_date: string;
+    end_date: string;
+    product_id?: number;
+    service_id?: number;
+  }) => {
+    const response = await api.get('/reports/sales-with-filters', { params });
+    return response.data;
+  },
 };

@@ -53,8 +53,12 @@ const menuItems = [
   //{ path: '/customers', label: 'Clientes', icon: PeopleIcon, roles: [1, 2, 3] },
   { label: 'Reportes', icon: ReportIcon, roles: [1, 2], children: [
     { path: '/reports/sales', label: 'Ventas' },
-    { path: '/reports/products', label: 'Productos' },
-    { path: '/reports/cash', label: 'Caja' },
+    //{ path: '/reports/products', label: 'Productos' },
+    //{ path: '/reports/cash', label: 'Caja' },
+    { path: '/reports/sales-filtered', label: 'Ventas con Filtros' },
+    { path: '/reports/sales-range', label: 'Ventas por Rango' },
+    { path: '/reports/inventory', label: 'Inventario' },
+    { path: '/reports/cash-register', label: 'Cajas' },
   ]},
   { path: '/settings', label: 'Configuración', icon: SettingsIcon, roles: [1] },
 ];

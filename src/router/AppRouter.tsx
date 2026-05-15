@@ -16,6 +16,11 @@ import { LoadingSpinner } from '../components/ui/LoadingSpinner';
 import { NewPurchasePage } from '../pages/purchases/NewPurchasePage';
 import { SaleDetailPage } from '../pages/sales/SaleDetailPage';
 
+import { SalesRangeReportPage } from '../pages/reports/SalesRangeReportPage';
+import { InventoryReportPage } from '../pages/reports/InventoryReportPage';
+import { CashRegisterReportPage } from '../pages/reports/CashRegisterReportPage';
+import { SalesFilteredReportPage } from '../pages/reports/SalesFilteredReportPage';
+
 const PrivateRoute: React.FC<{ children: React.ReactNode; roles?: number[] }> = ({ children, roles }) => {
   const { user, loading, hasPermission } = useAuth();
   if (loading) return <LoadingSpinner />;
@@ -42,6 +47,10 @@ export const AppRouter = () => (
         <Route path="purchases/new" element={<PrivateRoute roles={[1,2]}><NewPurchasePage /></PrivateRoute>} />
         <Route path="purchases" element={<PrivateRoute roles={[1,2]}><PurchaseListPage /></PrivateRoute>} />
         <Route path="reports/sales" element={<PrivateRoute roles={[1,2]}><SalesReportPage /></PrivateRoute>} />
+        <Route path="reports/sales-range" element={<PrivateRoute roles={[1,2]}><SalesRangeReportPage /></PrivateRoute>} />
+        <Route path="reports/inventory" element={<PrivateRoute roles={[1,2]}><InventoryReportPage /></PrivateRoute>} />
+        <Route path="reports/cash-register" element={<PrivateRoute roles={[1,2]}><CashRegisterReportPage /></PrivateRoute>} />
+        <Route path="reports/sales-filtered" element={<PrivateRoute roles={[1,2]}><SalesFilteredReportPage /></PrivateRoute>} />
       </Route>
     </Routes>
   </BrowserRouter>
